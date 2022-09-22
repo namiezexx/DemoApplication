@@ -26,6 +26,8 @@ public class MapController {
             partitionid = 146L;
         }
 
+        System.out.println(partitionid);
+
         Optional<Transport> transport = transportRepository.findById(partitionid);
 
         model.addAttribute("latitude", transport.get().getLatitude());
