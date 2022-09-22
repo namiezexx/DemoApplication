@@ -4,3 +4,8 @@ spring:
     check-template-location: true
     prefix: classpath:/templates/
     suffix: .html
+  datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://자신의 엔드포인트:포트/InnoDB
+        username: 접근이름
+        password: 접근비밀번호
