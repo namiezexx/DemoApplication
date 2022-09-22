@@ -20,7 +20,7 @@ public class MapController {
     private TransportRepository transportRepository;
 
     @GetMapping("map")
-    public String map(Model model, @RequestParam(value = "partitionid", required = false, defaultValue = 6703L)Long partitionid) {
+    public String map(Model model, @RequestParam(value = "partitionid", required = false, defaultValue = 6703)Long partitionid) {
 
         System.out.println(partitionid);
 
