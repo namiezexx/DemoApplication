@@ -33,5 +33,11 @@ public class Transport {
         this.createAt = createAt;
     }
 
-    
+    public BigDecimal getLatitude() {
+        return latitude;
+    }
+
+    public BigDecimal getLongitude() {
+        return longitude;
+    }
 }

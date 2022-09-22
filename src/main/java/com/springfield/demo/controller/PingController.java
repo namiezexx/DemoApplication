@@ -11,13 +11,13 @@ import java.util.List;
 @RestController
 public class PingController {
 
+    @Autowired
+    private TransportRepository transportRepository;
+
     @GetMapping("/")
     public String HelloWorld() {
         return "HelloWorld!";
     }
-
-    @Autowired
-    private TransportRepository transportRepository;
 
     @GetMapping("select")
     public List<Transport> selectAll() {
