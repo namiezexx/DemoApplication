@@ -20,11 +20,11 @@ public class MapController {
     private TransportRepository transportRepository;
 
     @GetMapping("map")
-    public String map(Model model, @RequestParam(value = "partitionid", required = false, defaultValue = "6703")long partitionid) {
+    public String map(Model model, @RequestParam(value = "partitionid", required = false, defaultValue = "6703") String partitionid) {
 
         System.out.println(partitionid);
 
-        Optional<Transport> transport = transportRepository.findById(partitionid);
+        Optional<Transport> transport = transportRepository.findById(Long.parseLong(partitionid));
 
         model.addAttribute("latitude", transport.get().getLatitude());
         model.addAttribute("longitude", transport.get().getLongitude());
