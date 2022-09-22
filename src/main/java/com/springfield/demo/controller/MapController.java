@@ -14,14 +14,6 @@ import java.util.List;
 @Controller
 public class MapController {
 
-    @Autowired
-    private TransportRepository transportRepository;
-
-    @RequestMapping(value = "/select", method = { RequestMethod.GET, RequestMethod.POST })
-    public List<Transport> selectAll() {
-        return transportRepository.findAll();
-    }
-    
     @GetMapping("map")
     public String map(Model model) {
         model.addAttribute("latitude", 37.504449);
