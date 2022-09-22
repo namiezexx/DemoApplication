@@ -19,7 +19,7 @@ public class MapController {
 
     @GetMapping("map")
     public String map(Model model) {
-        Optional<Transport> transport = transportRepository.findById(146L);
+        Optional<Transport> transport = transportRepository.findById(360L);
 
         model.addAttribute("latitude", transport.get().getLatitude());
         model.addAttribute("longitude", transport.get().getLongitude());
