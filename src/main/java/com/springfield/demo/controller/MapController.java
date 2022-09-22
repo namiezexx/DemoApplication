@@ -17,10 +17,17 @@ public class MapController {
     @Autowired
     private TransportRepository transportRepository;
 
+    @GetMapping("map")
+    public String map(Model model) {
+        Optional<Transport> transport = transportRepository.findById(146L);
+
+        model.addAttribute("latitude", transport.get().getLatitude());
+        model.addAttribute("longitude", transport.get().getLongitude());
+        return "map";
+    }
+
     @GetMapping("/map/{partitionid}")
     public String map(@PathVariable(name = "partitionid") Long partitionid, Model model) {
-
-        System.out.println(partitionid);
 
         Optional<Transport> transport = transportRepository.findById(partitionid);
 
